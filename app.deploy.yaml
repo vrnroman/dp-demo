@@ -1,0 +1,13 @@
+name: dp-demo
+blueprint: web
+web:
+  framework: nextjs
+auth:
+  tier: proper          # Google sign-in (via the platform relay)
+  signup: open          # anyone with Google can sign in
+  roles:
+    - name: viewer
+      can: see the demo
+    - name: editor
+      can: edit things (nothing to edit here yet)
+  default: viewer
