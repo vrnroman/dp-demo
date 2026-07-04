@@ -11,8 +11,9 @@ export default async function Home() {
   return (
     <main>
       <h1>DP Demo</h1>
-      <p>You are signed in as <strong>{user.name || user.email}</strong>.</p>
-      <p style={{ color: "#8a8178" }}>Your roles here: {roles.length ? roles.join(", ") : "(none yet)"}. Sign-in is Google, handled by the platform relay. This page is only visible after you sign in.</p>
+      <p>Signed in as <strong>{user.name || user.email}</strong>{user.role === "owner" ? " (owner)" : ""}.</p>
+      <p style={{ color: "#8a8178" }}>Your roles here: {roles.length ? roles.join(", ") : "(none yet)"}. Sign-in is Google via the platform relay; this page is only visible after you sign in.</p>
+      {user.role === "owner" && <p><a href="/settings">Manage who can do what</a></p>}
       <form action={doSignOut}><button type="submit">Sign out</button></form>
     </main>
   );
