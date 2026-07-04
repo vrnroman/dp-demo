@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getUser, rolesForUser } from "@platform/auth/next";
-import { doSignOut } from "./actions.ts";
+import { doSignOut } from "./actions";
 
 export const dynamic = "force-dynamic";
 
